@@ -1,47 +1,84 @@
-# Randomuser.me-Node
+# Random User Generator - React App
 
-### About
-This is the source code that powers the randomuser.me User Generator.
+A client-side React application for generating random user data. This application has been converted from a Node.js/MongoDB server application to a pure client-side React app.
 
-Our goal is to have a very diverse database that consists of data unique to different nationalities.
-While some places might have an SSN or their phone number might be formatted a certain way, other places usually follow a completely different set of rules.
+## Features
 
-Help us make the Random User Generator better by contributing to our database and teaching us the proper way of formatting data for different nationalities.
+- Generate random user data with customizable options
+- Filter by gender and nationality
+- Reproducible results using seed values
+- Responsive design
+- No backend required - runs entirely in the browser
 
-### Guidelines
-If you would like to help contribute data specific to a region, please keep these few rules in mind:
+## Getting Started
 
-1. Only add new nat data to the `api/.nextRelease` directory...
+### Installation
 
-2. Please keep all of the data organized.
-    - Keep US data in the US directory, AU in the AU directory, etc.
-
-3. No duplicates. Make sure that the data you are adding isn't already on the list.
-    - An easy way to remove duplicates from your file and sort: 
-```sh
-sort -u <file> -o <file>
+```bash
+npm install
 ```
 
-4\. Please don't submit requests that say "make this nationality". We will accept helpful contributions, but not orders :)
+### Development
 
-### Requirements
+```bash
+npm start
+```
 
-Node v9.0.0+
-MongoDB
+Runs the app in development mode at [http://localhost:3000](http://localhost:3000).
 
-### How to use
+### Build
 
-1. Run `npm install`
+```bash
+npm build
+```
 
-2. Run `npm run build` to build views and minify js/css
+Builds the app for production to the `build` folder.
 
-3. Run `npm test` and verify all tests pass
+## API Data Structure
 
-4. Start the server with `npm start`
+The `api/` folder contains data files organized by version (1.0, 1.1, 1.2, 1.3, 1.4) with country-specific data in subdirectories. Each country folder contains:
 
-### What if I want to add a new nationality?
-Go ahead! We will gladly accept new regions if they follow the guidelines above.
-Just place your files in a new directory in the `api/.nextRelease/data` folder with the appropriate 2 letter ISO Country Code (http://countrycode.org). Follow the format of the US folder for reference.
+- `inject.js` - Country-specific data injection logic
+- `lists/` - Text files with names, cities, streets, etc.
 
-### How to contact us
+This structure is maintained to allow easy updates to the data files for each API version.
+
+## Supported Nationalities
+
+- AU (Australia)
+- BR (Brazil)
+- CA (Canada)
+- CH (Switzerland)
+- DE (Germany)
+- DK (Denmark)
+- ES (Spain)
+- FI (Finland)
+- FR (France)
+- GB (United Kingdom)
+- IE (Ireland)
+- IN (India)
+- IR (Iran)
+- MX (Mexico)
+- NL (Netherlands)
+- NO (Norway)
+- NZ (New Zealand)
+- RS (Serbia)
+- TR (Turkey)
+- UA (Ukraine)
+- US (United States)
+
+## Usage Options
+
+- **Results**: Number of users to generate (1-5000)
+- **Gender**: Filter by male/female or show both
+- **Nationality**: Filter by specific country or show all
+- **Seed**: Provide a seed value for reproducible results
+
+## Technology Stack
+
+- React 18
+- React Scripts (Create React App)
+- Vanilla CSS
+
+## How to contact us
 If you have any questions, feel free to ask us on our Twitter page [@randomapi](https://twitter.com/randomapi).
